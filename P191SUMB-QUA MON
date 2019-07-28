@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+long long s, b;
+	int S[100008], B[100005][5];
+
+void Init (){
+	for(long long j = 0; j < b; j++)
+		for(int k = 0; k < 2; k++)
+			cin >> B[j][k];
+}
+
+int main(){
+	cin >> s >> b;
+	for(long long i = 0; i < s; i++){
+		cin >> S[i];
+	}
+	Init();
+	int i=0;
+	while(i < s){
+		int sum = 0;
+		for(int j = 0; j < b; j++){
+			if(S[i] >= B[j][0])
+				sum += B[j][1];  
+		}
+		cout << sum << " ";
+		i++;
+	}
+	return 0;
+}
