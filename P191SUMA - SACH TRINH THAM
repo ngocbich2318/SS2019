@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main(){
+	long long n;
+	int dem = 0;
+	long long a[100005];
+	cin >> n;
+	for(int i = 1; i <= n; i++)
+		cin >> a[i];
+	int x = 1;//trang bat dau doc
+	while(x <= n){
+		int t = a[x];
+		while(x!=t){
+			x++;
+			int tmp = a[x];
+			t = max(t,tmp);
+		}
+		dem++;
+		x++;
+	}
+	cout << dem;
+	return 0;
+}
